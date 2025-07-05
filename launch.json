@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "name": "Debug Cygwin Executable",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "args": ["C:\\Users\\TESTUSER\\OneDrive\\Documents\\aqua\\project\\test", "C:\\Users\\TESTUSER\\OneDrive\\Documents\\aqua\\project\\test\\sig.sig"],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:\\cygwin64\\bin\\gdb.exe",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "C/C++: g++.exe build active file"
+    }
+  ]
+}
