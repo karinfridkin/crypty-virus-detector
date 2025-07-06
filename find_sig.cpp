@@ -20,21 +20,10 @@
  * Assumptions:
  * - Input signature file can be read fully into memory.
  * - Only ELF files (identified by the first 4 bytes: 0x7F 'E' 'L' 'F') can be infected.
- * - Buffer size is dynamically adjusted to be at least twice the signature size or a minimum defined size.
  * - The environment supports C++17 (or later) for <filesystem> and threading facilities.
  *
  * Compilation:
  *    g++ -std=c++17 -pthread -O2 -o find_sig.exe find_sig.cpp
- *
- * Notes:
- * - The thread pool creates as many worker threads as hardware concurrency supports.
- * - The program waits for user input at the end to allow review of results before exiting.
- * - Exception safety is considered; exceptions in worker threads do not terminate the program.
- * - The buffered search method carefully handles overlap between reads to avoid missing
- *   signatures crossing buffer boundaries.
- * - If compilation or runtime errors occur, verify compiler version supports C++17 and
- *   that the std::filesystem namespace is available and linked correctly.
- *
  */
 
 #include <iostream>
